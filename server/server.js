@@ -16,9 +16,9 @@ const uri = process.env.ATLAS_URI
 mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
 const connection = mongoose.connection
 connection.once('open', () => {
-    console.log("MongoDB database connection established successfully")
+    console.log("MongoDB database connection established successfully!")
 })
 
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`)
+    console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`)
 })
