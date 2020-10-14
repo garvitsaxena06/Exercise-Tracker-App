@@ -8,25 +8,22 @@
 
 ```
 npm install or yarn install
-
 ```
 > Now cd into server and run command - 
 
 ```
 npm install
-
 ```
 
 ## Run App
 
-> cd into client and then run command - 
+> First cd into client and then run command - 
 
 ```
 npm start or yarn start
-
 ```
 
-> cd into server and then run command - 
+> Now cd into server and then run command - 
 
 ```
 # To run in dev mode run command
