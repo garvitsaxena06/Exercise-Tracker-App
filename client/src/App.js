@@ -1,14 +1,23 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import CreateExercise from './views/CreateExercise'
+import EditExercise from './views/EditExercise'
+import ExerciseList from './views/ExerciseList'
+import CreateUser from './views/CreateUser'
+import Navbar from './components/Navbar'
 
 function App() {
   return (
-    <div className="container">
-      <h1>Hello World</h1>
-      <div className="row">
-        <div className="col-md-6">Hello</div>
-        <div className="col-md-6">World</div>
-      </div>
-    </div>
+    <Router>
+      <Navbar />
+      <br/>
+      <Switch>
+        <Route path='/' exact component={ExerciseList} />
+        <Route path='/edit/:id' component={EditExercise} />
+        <Route path='/create' component={CreateExercise} />
+        <Route path='/user' component={CreateUser} />
+      </Switch>
+    </Router>
   );
 }
 
