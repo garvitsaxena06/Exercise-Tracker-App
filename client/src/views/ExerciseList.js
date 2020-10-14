@@ -55,20 +55,22 @@ class ExerciseList extends Component {
             <div className="container">
                 <h3 className="font-weight-bold">Exercises List</h3>
                 <br/>
-                <table className="table table-bordered table-hover">
-                    <thead className="thead-light">
-                    <tr>
-                        <th>Username</th>
-                        <th>Description</th>
-                        <th>Duration (mins)</th>
-                        <th>Date</th>
-                        <th>Actions</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                        {this.exerciseList()}
-                    </tbody>
-                </table>
+                <div style={{overflowX: 'auto'}}>
+                    <table className="table table-bordered table-hover">
+                        <thead className="thead-light">
+                        <tr>
+                            <th>Username</th>
+                            <th>Description</th>
+                            <th>Duration (mins)</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {this.exerciseList()}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         )
     }
