@@ -26,10 +26,10 @@ npm start or yarn start
 > Now cd into server and then run command - 
 
 ```
-# To run in dev mode run command
+# To run in dev mode run command -
 npm run dev
 
-# Run in prod mode
+# To run in prod mode run command -
 npm start
 ```
 
