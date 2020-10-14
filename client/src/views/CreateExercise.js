@@ -65,12 +65,11 @@ class CreateExercise extends Component {
             duration: this.state.duration,
             date: this.state.date
         }
-        console.log(exercise)
 
         axios.post('http://localhost:5000/exercises/add', exercise)
             .then(res => console.log(res.data))
             .catch(err => console.log(err))
-            
+
         window.location = '/'
     }
 
@@ -105,7 +104,7 @@ class CreateExercise extends Component {
                         <input type="text" id="description" className="form-control" value={this.state.description} onChange={this.onChangeDescription} />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="duration" className="font-weight-bold">Duration: </label>
+                        <label htmlFor="duration" className="font-weight-bold">Duration (mins): </label>
                         <input type="text" id="duration" className="form-control" value={this.state.duration} onChange={this.onChangeDuration} />
                     </div>
                     <div className="form-group">

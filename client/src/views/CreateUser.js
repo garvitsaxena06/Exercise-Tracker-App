@@ -22,11 +22,16 @@ class CreateUser extends Component {
         const user = {
             username: this.state.username
         }
-        console.log(user)
 
         axios.post('http://localhost:5000/users/add', user)
-            .then(res => console.log(res.data))
-            .catch(err => console.log(err))
+            .then(res => {
+                console.log(res.data)
+                alert('User created!')
+            })
+            .catch(err => {
+                console.log(err)
+                alert('Error: User already exist!')
+            })
 
         this.setState({
             username: ''

@@ -10,7 +10,7 @@ const Exercise = (props) => (
         <td>{props.exercise.date.substring(0, 10)}</td>
         <td>
             <Link to={'/edit/' + props.exercise._id}>Edit</Link> |
-            <a href="#" onClick={() => props.deleteExercise(props.exercise._id)}> Delete</a>
+            <a href="#" onClick={() => { props.deleteExercise(props.exercise._id) }}> Delete</a>
         </td>
     </tr>
 )
@@ -31,15 +31,13 @@ class ExerciseList extends Component {
                 this.setState({
                     exercises: response.data
                 })
-                console.log(this.state.exercises)
             })
             .catch(err => console.log(err))
     }
 
     deleteExercise(id) {
-        axios.delete('http://localhost:5000/exercises' + id)
+        axios.delete('http://localhost:5000/exercises/' + id)
             .then(res => {
-                console.log(res.data)
                 this.setState({
                     exercises: this.state.exercises.filter(exercise => exercise._id !== id)
                 })
@@ -63,7 +61,7 @@ class ExerciseList extends Component {
                     <tr>
                         <th>Username</th>
                         <th>Description</th>
-                        <th>Duration</th>
+                        <th>Duration (mins)</th>
                         <th>Date</th>
                         <th>Actions</th>
                     </tr>

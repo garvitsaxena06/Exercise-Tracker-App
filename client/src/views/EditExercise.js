@@ -75,7 +75,6 @@ class EditExercise extends Component {
             duration: this.state.duration,
             date: this.state.date
         }
-        console.log(exercise)
 
         axios.post('http://localhost:5000/exercises/update/' + this.props.match.params.id, exercise)
             .then(res => console.log(res.data))
@@ -115,7 +114,7 @@ class EditExercise extends Component {
                         <input type="text" id="description" className="form-control" value={this.state.description} onChange={this.onChangeDescription} />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="duration" className="font-weight-bold">Duration: </label>
+                        <label htmlFor="duration" className="font-weight-bold">Duration (mins): </label>
                         <input type="text" id="duration" className="form-control" value={this.state.duration} onChange={this.onChangeDuration} />
                     </div>
                     <div className="form-group">
