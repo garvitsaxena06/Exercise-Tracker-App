@@ -10,7 +10,7 @@ const Exercise = (props) => (
         <td>{props.exercise.date.substring(0, 10)}</td>
         <td>
             <Link to={'/edit/' + props.exercise._id}>Edit</Link> |
-            <a href="#" onClick={() => { props.deleteExercise(props.exercise._id) }}> Delete</a>
+            <a href="#" onClick={() => props.deleteExercise(props.exercise._id)}> Delete</a>
         </td>
     </tr>
 )
@@ -19,14 +19,13 @@ class ExerciseList extends Component {
     constructor() {
         super()
         this.state = {
-            exercises: [],
-            count: 1
+            exercises: []
         }
         this.deleteExercise = this.deleteExercise.bind(this)
     }
 
-    componentDidMount() {
-        axios.get('http://localhost:5000/exercises')
+    componentDidMount = async () => {
+        await axios.get('http://localhost:5000/exercises')
             .then(response => {
                 this.setState({
                     exercises: response.data
