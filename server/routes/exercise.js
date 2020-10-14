@@ -15,7 +15,7 @@ route.post('/add', (req, res) => {
     const username = req.body.username
     const description = req.body.description
     const duration = Number(req.body.duration)
-    const date = Date(req.body.date)
+    const date = req.body.date
 
     const newExercise = new Exercise({
         username,
@@ -50,7 +50,7 @@ route.post('/update/:id', (req, res) => {
             exercise.username = req.body.username,
             exercise.description = req.body.description,
             exercise.duration = Number(req.body.duration),
-            exercise.date = Date(req.body.date)
+            exercise.date = req.body.date
             
             exercise.save()
                 .then(() => res.json('Exercise updated!'))
