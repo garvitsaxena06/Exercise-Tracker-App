@@ -70,7 +70,7 @@ class CreateExercise extends Component {
             .then(res => console.log(res.data))
             .catch(err => console.log(err))
 
-        window.location = '/'
+        this.props.history.push('/')
     }
 
     render() {
