@@ -21,7 +21,7 @@ class CreateExercise extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/users')
+        axios.get(`${process.env.REACT_APP_BASE_URL}/users`)
             .then(response => {
                 if (response.data.length > 0) {
                     this.setState({
@@ -66,7 +66,7 @@ class CreateExercise extends Component {
             date: this.state.date
         }
 
-        axios.post('http://localhost:5000/exercises/add', exercise)
+        axios.post(`${process.env.REACT_APP_BASE_URL}/exercises/add`, exercise)
             .then(res => console.log(res.data))
             .catch(err => console.log(err))
 
