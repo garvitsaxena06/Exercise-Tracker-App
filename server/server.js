@@ -13,7 +13,7 @@ const userRouter = require('./routes/user')
 dotenv.config({ path: './config/config.env' })
 
 const app = express()
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 8000
 
 // initializing cors
 app.use(cors())
